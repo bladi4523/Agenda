@@ -6,9 +6,6 @@
 
 <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
         <th>
@@ -34,12 +31,8 @@
         <td>
             @Html.DisplayFor(modelItem => item.Cuatrimestre)
         </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IdGru }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IdGru }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IdGru })
-        </td>
     </tr>
 }
-
+    
 </table>
+<a href="/contactoes/Index" class="btn-danger">Contactos</a>
