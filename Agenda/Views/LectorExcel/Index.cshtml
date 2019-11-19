@@ -1,0 +1,46 @@
+﻿@model MVCImportExcel.Models.LectorExcelModel
+@{
+    ViewBag.Title = "Home Page";
+}
+<style type="text/css">
+    #tblExcel {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 1rem;
+        background-color: transparent;
+    }
+
+    .tdColumnHeader {
+        vertical-align: bottom;
+        border-bottom: 2px solid #dee2e6;
+        font-weight: bold;
+    }
+
+    .tdCellData {
+        padding: .75rem;
+        vertical-align: top;
+        border-top: 1px solid #dee2e6;
+    }
+</style>
+<div class="jumbotron">
+    <h2>Lector Excel</h2>
+    <p>
+        @using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <div class="row">
+                <div class="col-md-4">
+                    @Html.LabelFor(x => x.MyExcelFile)
+                    @Html.TextBoxFor(x => x.MyExcelFile, new { type = "file" })
+                    @Html.ValidationMessageFor(x => x.MyExcelFile)
+                </div>
+                <div class="col-md-8">
+                    <button type="submit" class="btn btn-primary">Upload</button>
+                </div>
+            </div>
+            <br /><br />
+            @Html.Raw(Model.MSExcelTable)
+        }
+    </p>
+</div>
+
+
