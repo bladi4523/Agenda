@@ -18,13 +18,24 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Nombre de la aplicación", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Practica 5", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
+                <div class="btn-group show-on-hover">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        Menú <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li>@Html.ActionLink("Vinculacion Facebook", "Login", "Account")</li>
+                        <li>@Html.ActionLink("Consulta de Asignaturas en Curso", "Index", "Grupoes")</li>
+                        <li>@Html.ActionLink("1er. Modulo de Agenda Electronica (Contactos)", "Index", "contactoes")</li>
+                        <li>@Html.ActionLink("2do. Modulo de Agenda Electronica (Eventos)", "Index", "Eventos")</li>
+                        <li>@Html.ActionLink("Lector Excel", "Index", "LectorExcel")</li>
+                        <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
+                    </ul>
+                </div>
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
+                    
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
