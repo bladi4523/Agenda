@@ -54,9 +54,9 @@ namespace Agenda
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "2135152426793304",
+               appSecret: "acb648a64a05c5c71d166f74c44ba069");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
