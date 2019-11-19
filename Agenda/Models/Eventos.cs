@@ -12,11 +12,12 @@ namespace Agenda.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Grupo
+    public partial class Eventos
     {
-        public int IdGru { get; set; }
-        public string Nombre { get; set; }
-        public string Asignatura { get; set; }
-        public string Cuatrimestre { get; set; }
+        public int ID { get; set; }
+        public string Evento { get; set; }
+        public Nullable<System.DateTime> Fecha { get; set; }
+
+
     }
 }
