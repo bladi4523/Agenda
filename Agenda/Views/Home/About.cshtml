@@ -1,7 +1,65 @@
 ﻿@{
-    ViewBag.Title = "About";
+    ViewData["Title"] = "Acerca De";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+<h2>@ViewData["Title"]</h2>
+<style>
+    .img-circle {
+        border-radius: 50%;
+    }
 
-<p>Use this area to provide additional information.</p>
+    .img-circle {
+        border-radius: 0;
+    }
+
+    .ratio {
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 0;
+        /*padding-bottom: 100%;*/
+        position: relative;
+        width: 100%;
+    }
+
+    .img-circle {
+        border-radius: 50%;
+    }
+
+    .img-responsive {
+        display: block;
+        height: auto;
+        max-width: 100%;
+    }
+</style>
+<div class="row ">
+    <div class="col-md-6">
+        <div id="img" style="width:200px">
+            <img class="ratio img-responsive img-circle text-center" src="~/Content/img/20191115_104131.jpg">
+        </div>
+        <h4>
+            Bladimir Cleto
+            <br />
+            <small>Modulos Desarrollados</small>
+        </h4>
+        <ul>
+            <li>Vinculación Facebook</li>
+            <li>Consulta de Asignaturas en Curso</li>
+            <li>1er. Modulo de Agenda Electronica</li>
+        </ul>
+    </div>
+    <div class="col-md-6">
+        <div id="img" style="width:200px">
+            <img class="ratio img-responsive img-circle text-center" src="~/Content/img/instasize_191113192958.png">
+        </div>
+        <h4>
+            Niurlix Olivero
+            <br />
+            <small>Modulos Desarrollados</small>
+        </h4>
+        <ul>
+            <li>2do. Modulo de Agenda Electronica</li>
+            <li>Lector de Archivo</li>
+            <li>Acerca de </li>
+        </ul>
+    </div>
+</div>
