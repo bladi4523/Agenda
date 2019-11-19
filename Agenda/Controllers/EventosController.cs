@@ -15,10 +15,14 @@ namespace Agenda.Controllers
         private FaceEntities db = new FaceEntities();
 
         // GET: Eventos
-        public ActionResult Index()
+        public ActionResult Index(string SearchString)
         {
-            //db.Eventos.Where(x => x.Evento.Contains(cadena));
-            return View(db.Eventos.ToList());
+            if (SearchString == null)
+            {
+                return View(db.Eventos.ToList());
+            }
+            var resultado = db.Eventos.Where(x => x.Evento.Contains(SearchString));
+            return View(resultado.ToList());
         }
 
         // GET: Eventos/Details/5
