@@ -6,6 +6,13 @@
 
 <h2>Bienvenidos</h2>
 <h3>Tabla De Estudiantes</h3>
+@using (Html.BeginForm("Index", "Grupoes", FormMethod.Get))
+{
+    <p>
+        Buscar por Nombre: @Html.TextBox("searching2")
+        <input type="submit" value="Buscar" />
+    </p>
+}
 <table class="table">
     <tr>
         <th>
@@ -20,19 +27,20 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Asignatura)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Cuatrimestre)
-        </td>
-    </tr>
-}
-    
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Asignatura)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cuatrimestre)
+            </td>
+        </tr>
+    }
+
 </table>
 <a href="/contactoes/Index" class="btn-danger">Contactos</a>

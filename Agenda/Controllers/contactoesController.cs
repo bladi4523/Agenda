@@ -16,7 +16,7 @@ namespace Agenda.Controllers
 
         // GET: contactoes
 
-        public ActionResult Index(string searching1)
+        public ActionResult Index(string searching1, string searching2)
         {
             var contactos = from n in db.contacto
                           select n;
@@ -24,8 +24,13 @@ namespace Agenda.Controllers
             {
                 contactos = contactos.Where(n => n.Nombre.Contains(searching1));
             }
+            if (!String.IsNullOrEmpty(searching2))
+            {
+                contactos = contactos.Where(n => n.Celular.Contains(searching2));
+            }
             return View(contactos.ToList());
         }
+    
 
         // GET: contactoes/Details/5
         public ActionResult Details(int? id)
