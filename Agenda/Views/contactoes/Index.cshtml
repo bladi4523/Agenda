@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Index";
+      Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Index</h2>
@@ -9,6 +10,13 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+@using (Html.BeginForm("Index", "contactoes", FormMethod.Get))
+{
+    <p>
+        Buscar por Nombre: @Html.TextBox("searching1")
+        <input type="submit" value="Buscar" />
+    </p>
+}
 <table class="table">
     <tr>
         <th>
@@ -26,26 +34,27 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Celular)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Direccion)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IdCon }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IdCon }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IdCon })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Celular)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Direccion)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.IdCon }) |
+                @Html.ActionLink("Details", "Details", new { id = item.IdCon }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.IdCon })
+            </td>
+        </tr>
+    }
 
 </table>

@@ -15,9 +15,16 @@ namespace Agenda.Controllers
         private FaceEntities db = new FaceEntities();
 
         // GET: contactoes
-        public ActionResult Index()
+
+        public ActionResult Index(string searching1)
         {
-            return View(db.contacto.ToList());
+            var contactos = from n in db.contacto
+                          select n;
+            if (!String.IsNullOrEmpty(searching1))
+            {
+                contactos = contactos.Where(n => n.Nombre.Contains(searching1));
+            }
+            return View(contactos.ToList());
         }
 
         // GET: contactoes/Details/5
